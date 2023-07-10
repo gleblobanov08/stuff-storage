@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @gleblobanov08
 - 👀 I’m interested in front-end and web developing
-- 🌱 I’m currently learning javascript and php
+- 🌱 I’m currently learning javascript and css transitions
 - 📫 How to reach me ...
   gleblobanov7@gmail.com
 
