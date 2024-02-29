@@ -8,3 +8,17 @@
     max-width: 1200px;
     margin: 0 auto;
 }
+
+.game {
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
