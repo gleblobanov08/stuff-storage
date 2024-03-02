@@ -1,4 +1,4 @@
-const cells = document.getElementsByClassName("cell");
+const cells = Array.from(document.getElementsByClassName("cell"));
 const results = document.getElementById("results");
 const winningCombinations = [
     [0, 1, 2],
@@ -11,52 +11,45 @@ const winningCombinations = [
     [2, 4, 6]
 ];
 let currentPlayer = 'X';
-let gameOver = false;
+let spaces = Array(9).fill(null);
 
-startGame();
-
-function startGame() {
-    cells.forEach(el => {
-        el.addEventListener('click', makeMove(el), {once = true})
-    });
-}
+const startGame = () => {
+    cells.forEach(el => el.addEventListener('click', makeMove))
+};
 
 function makeMove(el) {
-    const spot = el.target;
-    placeSpot(spot, currentPlayer)
-    if (!checkEnd) {
-        changePlayer();
-    }
-}
+    const spot = el.target.id;
+    if (!spaces[spot]) {
+        spaces[spot] = currentPlayer;
+        el.target.innerText = currentPlayer;
 
-function changePlayer () {
-    if (currentPlayer === 'X') {
-        currentPlayer = 'O';
-    } else {
-        currentPlayer = 'X';
-    }
-}
+        currentPlayer = currentPlayer === "X" ? "O" : "X";
 
-function placeSpot(square, player) {
-    square.innerText = player;
+        if (checkEnd() !== false) {
+            results.innerText = currentPlayer + " has won!";
+        }
+    }
 }
 
 function checkEnd () {
-    if (winningCombinations.some(combination => {
-        return combination.every(i => {
-            return cells[i].innerText.contains(currentPlayer)
-        })
-    })) {
-        results.innerText = currentPlayer + " won!";
-        gameOver = true;
-    } else if ([...cells].every(el => {
-        el.innerText.contains("X") || el.innerText.contains("O");
-    })) {
-        results.innerText = "Draw!";
-        gameOver = true;
-    } else {
-        continue;
+    for (const condition in winningCombinations) {
+        let [a, b, c] = condition;
+
+        if (spaces[a] && (spaces[a] === spaces[b] === spaces[c])) {
+            return [a, b, c];
+        }
     }
+    return false;
 }
 
-document.getElementById("reset-btn").addEventListener("click", startGame());
+function restart() {
+    spaces.fill(null);
+    cells.forEach(el => {
+        el.innerText = "";
+    });
+    currentPlayer = "X";
+    results.innerText = "";
+};
+document.getElementById("reset-btn").addEventListener("click", restart());
+
+startGame();
