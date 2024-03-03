@@ -3,22 +3,26 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+  
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    text-align: center;
 }
-
+  
 .game {
+    margin: 30px auto;
     width: 300px;
     height: 300px;
     display: grid;
     grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
-
+  
 .cell {
+    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    font-size: 75px;
 }
