@@ -1,1 +1,1 @@
-# chesswebsite.github.io
+# chesswebsite
