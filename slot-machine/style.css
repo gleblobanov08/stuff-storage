@@ -1,11 +1,31 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .slot {
-  margin: 0 auto;
-  width: 600px;
-  padding: 0 0 40px;
+margin: 0 auto;
+width: 500px;
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+
+#slot-screen {
+margin-bottom: 30px;
+background: #fafafa;
+width: 100%;
+display: flex;
+justify-content: space-evenly;
+}
+
+.ring {
+width: 100px;
+height: 150px;
+border: 2px solid #212121;
+border-radius: 5px;
+font-size: 50px;
+display: grid;
+place-items: center;
 }
