@@ -1,4 +1,4 @@
-const possibleOutcomes = ["1", "2", "3", "4", "5"];
+const possibleOutcomes = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 const rings = document.querySelectorAll(".ring");
 rings.forEach(ring => ring.innerText = "?");
@@ -9,7 +9,7 @@ btn.addEventListener('click', spin);
 function spin() {
   for (let i = 0; i < 3; i++) {
     setTimeout(() => { 
-        rings[i].innerText = possibleOutcomes[Math.floor(Math.random() * 5)];
+        rings[i].innerText = possibleOutcomes[Math.floor(Math.random() * 9)];
     }, i * 800);
   }
   checkWin();
