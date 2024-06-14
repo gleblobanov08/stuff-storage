@@ -41,6 +41,10 @@ button:hover {
     background-color: #434343;
 }
 
+a {
+    color: black;
+}
+
 .move-history {
     margin-top: 20px;
     border: 1px solid #ccc;
@@ -51,18 +55,22 @@ button:hover {
     overflow-y: scroll;
     background-color: #f2f2f2;
 }
-.board {
-    width: 400px;
-    margin: 20px auto;
-/*    display: grid;
-    grid-template-columns: repeat(8, 50px);
-    grid-template-rows: repeat(8, 50px);
-*/
-}
 
 .buttons {
     margin-top: 20px;
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+@media screen and (min-width: 768px) {
+    .board {
+        width: 400px;
+        margin: 20px auto;
+    }
+}
+@media screen and (max-width: 768px) {
+    .board {
+        width: 80%;
+        margin: 0 auto;
+    }
 }

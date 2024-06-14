@@ -13,6 +13,10 @@ body {
     color: #a9a9a9;
 }
 
+a {
+    color: black;
+}
+
 .chess-container, .table-container {
     display: flex;
     align-items: center;
