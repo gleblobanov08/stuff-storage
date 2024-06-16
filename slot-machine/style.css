@@ -10,10 +10,10 @@ width: 500px;
 display: flex;
 align-items: center;
 flex-direction: column;
+gap: 30px;
 }
 
 #slot-screen {
-margin-bottom: 30px;
 background: #fafafa;
 width: 100%;
 display: flex;
@@ -28,4 +28,13 @@ border-radius: 5px;
 font-size: 50px;
 display: grid;
 place-items: center;
+}
+
+button {
+padding: 12px 20px;
+border-radius: 10%;
+background-color: lightgreen;
+}
+.not-spinable {
+background-color: grey;
 }
