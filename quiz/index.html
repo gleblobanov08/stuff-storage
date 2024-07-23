@@ -14,11 +14,12 @@
         getData();
 
         async function getData() {
-            const response = await fetch('./List-of-players.xlsx');
-            const data = await response.text();
-
-            const table = data.split('\n').slice(1);
-            console.log(table);
+            const response = await fetch('./List-of-players.csv');
+            const data = await response.blob();
+            const table = await data.text();
+            
+            const tour = table.split('\n').slice(1);
+            tour.forEach(el => console.log(el));
         }
     </script>
 </body>
