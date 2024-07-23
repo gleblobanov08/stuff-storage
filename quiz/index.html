@@ -4,24 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <script src="https://unpkg.com/read-excel-file@5.x/bundle/read-excel-file.min.js"></script>
+    <!--<script src="https://unpkg.com/read-excel-file@5.x/bundle/read-excel-file.min.js"></script>-->
     <title>Quiz</title>
 </head>
 <body>
     <h1>Сможете вспомнить всех чемпионов мира по русской пирамиде?</h1>
     <div id="answers"></div>
     <script>
-        let field = document.getElementById('answers');
-        fetch('./List-of-players.xlsx')
-        .then(response => response.blob())
-        .then(blob => readXlsxFile(blob))
-        .then((rows) => {
-            rows.map(row => {
-                let each = document.createElement("p");
-                each.textContent = row;
-                field.appendChild(each);
-            })
-        });
+        getData();
+
+        async function getData() {
+            const response = await fetch('./List-of-players.xlsx');
+            const data = await response.text();
+
+            const table = data.split('\n').slice(1);
+            console.log(table);
+        }
     </script>
 </body>
 </html>
