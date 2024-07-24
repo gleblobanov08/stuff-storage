@@ -10,17 +10,6 @@
 <body>
     <h1>Сможете вспомнить всех чемпионов мира по русской пирамиде?</h1>
     <div id="answers"></div>
-    <script>
-        getData();
-
-        async function getData() {
-            const response = await fetch('./List-of-players.csv');
-            const data = await response.blob();
-            const table = await data.text();
-            
-            const tour = table.split('\n').slice(1);
-            tour.forEach(el => console.log(el));
-        }
-    </script>
+    <script src="./script.js"></script>
 </body>
 </html>
