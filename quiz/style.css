@@ -1,0 +1,8 @@
+#answers {
+    display: grid;
+    grid-template-columns: 5% 20% 45% 30%;
+}
+#answers:nth-child(3n) {
+    display: none;
+    color: transparent;
+}
