@@ -1,8 +1,19 @@
 #answers {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 14px;
     display: grid;
-    grid-template-columns: 5% 20% 45% 30%;
-}
-#answers:nth-child(4n + 3) {
-    display: none;
-    color: transparent;
+    grid-template-columns: 1fr 4fr 9fr 5fr;
+    div {
+        border: 1px solid #000;
+        padding: 5px 10px;
+        text-align: center;
+    }
+    div:nth-child(4n+1) {
+        background-color: palevioletred;
+    }
+    div:nth-child(4n) {
+        color: transparent;
+    }
 }
