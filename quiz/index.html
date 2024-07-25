@@ -8,7 +8,15 @@
     <title>Quiz</title>
 </head>
 <body>
-    <h1>Сможете вспомнить всех чемпионов мира по русской пирамиде?</h1>
-    <div id="answers"></div>
+    <div class="container">
+        <h1>Сможете вспомнить всех чемпионов мира по русской пирамиде?</h1>
+        <input type="text" id="answer-input" placeholder="Введите имя" oninput="checkInput(this)">
+        <div id="quiz">
+            <div id="quiz-items"></div>
+            <button onclick="checkAnswers()">Submit Answers</button>
+            <button onclick="giveUp()">Give up</button>
+            <div id="result" class="result"></div>
+        </div>
+    </div>
 </body>
 </html>

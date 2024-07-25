@@ -1,3 +1,4 @@
+/*
 #answers {
     width: 80%;
     margin: 0 auto;
@@ -16,4 +17,29 @@
     div:nth-child(4n) {
         color: transparent;
     }
+}
+*/
+body {
+    font-family: Arial, sans-serif;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+.quiz-item {
+    margin: 10px 0;
+}
+.player-name {
+    color: transparent;
+}
+.revealed {
+    color: black;
+}
+.result {
+    font-weight: bold;
 }
