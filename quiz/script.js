@@ -26,8 +26,10 @@ function loadQuiz() {
         quizItem.className = 'quiz-item';
         quizItem.id = `champion-${index}`;
         quizItem.innerHTML = `
-            <span>${champion.year} - ${champion.place} - ${champion.event} - </span>
-            <span class="player-name">${champion.player}</span>
+            <div>${champion.year}</div>
+            <div>${champion.place}</div>
+            <div>${champion.event}</div>
+            <div class="player-name">${champion.player}</div>
         `;
         quizContainer.appendChild(quizItem);
     });
@@ -39,25 +41,25 @@ function checkInput(input) {
     items.forEach(item => {
         const player = item.querySelector('.player-name').textContent.trim().toLowerCase();
         if (player === playerName) {
-            player.classList.add('revealed');
+            item.querySelector('.player-name').classList.add('revealed');
+            input.value = '';
         }
     });
 }
 
 function checkAnswers() {
-    const revealedItems = document.querySelectorAll('.player-name.revealed');
+    const revealedItems = document.querySelectorAll('.player-name.revealed').length;
     const totalItems = document.querySelectorAll('.quiz-item').length;
-    const score = revealedItems.length;
     const result = document.getElementById('result');
-    result.textContent = `You got ${score} out of ${totalItems} correct!`;
+    result.textContent = `You got ${revealedItems} out of ${totalItems} correct!`;
 }
 
 function giveUp() {
+    checkAnswers();
     const items = document.querySelectorAll('.player-name');
     items.forEach(item => {
         item.classList.add('revealed');
     });
-    checkAnswers();
 }
     
 getData();
