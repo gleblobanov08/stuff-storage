@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: Arial, sans-serif;
-    background: #f0f0f0;
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
 }
 
 .container {
@@ -23,26 +23,26 @@ body {
 h1 {
     text-align: center;
     font-size: 2em;
+    font-weight: bold;
     margin-bottom: 20px;
     color: #333333;
 }
 
 #quiz {
     margin-top: 20px;
-}
-
-#quiz-items {
-    display: grid;
-    grid-template-columns: 1fr 3fr 3fr 3fr;
-    gap: 15px;
-}
-
-.quiz-item {
-    padding: 10px;
-    background: #fafafa;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+    #quiz-items {
+        display: grid;
+        grid-template-columns: 1fr 3fr 3fr 3fr;
+        gap: 15px;
+        .quiz-item {
+            padding: 10px;
+            background: #fafafa;
+            font-size: 1.1em;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+    }
 }
 
 .player-name {
@@ -67,6 +67,7 @@ button {
 
 button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 input[type="text"] {
@@ -76,11 +77,13 @@ input[type="text"] {
     border: 1px solid #cccccc;
     border-radius: 4px;
     box-sizing: border-box;
-    transition: border-color 0.3s ease;
+    font-size: 1em;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 input[type="text"]:focus {
     border-color: #007bff;
+    background-color: #e6f0ff;
     outline: none;
 }
 
@@ -88,4 +91,53 @@ input[type="text"]:focus {
     font-size: 1.2em;
     color: #333333;
     margin-top: 20px;
+    animation: fadeIn 1s ease-in-out;
 }
+
+#answer-input {
+    font-size: 1.2em;
+}
+
+/* Reveal Effects
+.quiz-item.revealed {
+    background-color: #dff0d8;
+}
+*/
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Interactive Feedback
+
+input[type="text"].correct {
+    border-color: #28a745;
+    background-color: #e6ffe6;
+}
+
+input[type="text"].incorrect {
+    border-color: #dc3545;
+    background-color: #ffe6e6;
+}
+
+Progress Indicators
+
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.progress-bar-fill {
+    height: 20px;
+    width: 0;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}*/

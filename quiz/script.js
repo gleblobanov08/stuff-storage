@@ -61,5 +61,3 @@ function giveUp() {
         item.classList.add('revealed');
     });
 }
-    
-getData();
