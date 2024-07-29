@@ -41,7 +41,7 @@ function checkInput(input) {
     items.forEach(item => {
         const player = item.querySelector('.player-name').textContent.trim().toLowerCase();
         if (player === playerName) {
-            item.querySelector('.player-name').classList.add('revealed');
+            item.querySelector('.player-name').classList.add('correct');
             input.value = '';
         }
     });
@@ -58,6 +58,8 @@ function giveUp() {
     checkAnswers();
     const items = document.querySelectorAll('.player-name');
     items.forEach(item => {
-        item.classList.add('revealed');
+        item.classList.add('incorrect');
     });
 }
+
+getData();
