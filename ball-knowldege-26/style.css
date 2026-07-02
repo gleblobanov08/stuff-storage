@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial,Helvetica,sans-serif;
+    background: linear-gradient(135deg,#001f54,#00509d,#0096c7);
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 42px;
+}
+
+#timer {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 15px;
+    color: #ffd60a;
+}
+
+#progress {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 320px;
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    outline: none;
+}
+
+table {
+    margin: 30px auto;
+    border-collapse: collapse;
+}
+
+td {
+    width: 180px;
+    height: 45px;
+    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.08);
+    font-size: 18px;
+}
+
+.hidden {
+    color: transparent;
+}
+
+.revealed {
+    color: #00ff88;
+    font-weight: bold;
+}
+
+#message {
+    margin-top: 25px;
+    font-size: 34px;
+    font-weight: bold;
+}
